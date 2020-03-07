@@ -1,4 +1,6 @@
 import React from 'react'
+import Message from '../../atoms/Message/Message'
+import SubMessage from '../../atoms/SubMessage/SubMessage'
 
 class AboutOuter extends React.Component {
 
@@ -6,17 +8,18 @@ class AboutOuter extends React.Component {
         super(props)
         this.style = {
             position: "relative",
-            top: "100px",
+            top: "70px",
             left: "0%",
-            width: "550px",
-            height: "250px",
-            background: "blue",
+            width: "660px",
+            height: "220px",
         }
     }
 
     render() {
         return(
             <div style={this.style}>
+                <Message />
+                <SubMessage />
             </div>
         )
     }
