@@ -1,5 +1,9 @@
 import React from 'react'
 import SNSButtons from '../../molecules/SNSButtons/SNSButtons'
+import UserInfoInputs from '../../molecules/UserInfoInputs/UserInfoInputs'
+import robotcheck from '../../pages/images/robotcheck.png'
+import RegistrationArea from '../../molecules/RegistrationArea/RegistrationArea'
+
 
 class LoginItems extends React.Component {
 
@@ -29,6 +33,30 @@ class LoginItems extends React.Component {
             color: "#9DE06A",
             textAlign: "center",
         }
+        this.passinfostyle = {
+            position: "relative",
+            display: "inline-block",
+            marginLeft: "auto",
+            width: "330px",
+            color: "white",
+            fontSize: "9px",
+            top: "8px",
+        }
+        this.robotcheckouterstyle = {
+            position: "relative",
+            display: "inline-block",
+            marginLeft: "auto",
+            width: "330px",
+            height: "78px",
+            top: "25px",
+        }
+        this.robotcheckstyle = {
+            position: "relative",
+            display: "inline-block",
+            marginLeft: "auto",
+            width: "300px",
+            height: "73px",
+        }
     }
 
     render() {
@@ -38,6 +66,12 @@ class LoginItems extends React.Component {
                 <div style={this.orstyle}>
                     <p style={this.orinnerstyle}>OR</p>
                 </div>
+                <UserInfoInputs />
+                <div style={this.passinfostyle}>8文字以上、英・数・記号が使えます</div>
+                <div style={this.robotcheckouterstyle}>
+                    <img src={robotcheck} style={this.robotcheckstyle} alt="robotcheck" />
+                </div>
+                <RegistrationArea />
             </div>
         )
     }

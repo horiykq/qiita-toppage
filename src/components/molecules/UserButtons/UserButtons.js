@@ -12,7 +12,7 @@ class UserButtons extends React.Component {
             display: "flex",
             alignItems: "center",
             marginLeft: "auto",
-            width: "170px",
+            width: "194px",
             height: "34px",
         }
     }
@@ -20,7 +20,7 @@ class UserButtons extends React.Component {
     render() {
         return(
             <div style={this.style}>
-                <RegistrationButton />
+                <RegistrationButton purpose="ユーザ登録" />
                 <LoginButton />
             </div>
         )

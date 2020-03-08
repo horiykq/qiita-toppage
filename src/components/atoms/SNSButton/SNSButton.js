@@ -79,7 +79,7 @@ class SNSButton extends React.Component {
         return (
             <div style={this.style} onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>
                 <div style={this.elementstyle}>
-                    <img src={this.imgsrc} style={this.imgstyle}></img>
+                    <img src={this.imgsrc} alt="snsicon" style={this.imgstyle}></img>
                     <p style={this.labelstyle}>{this.button}</p>
                 </div>
             </div>
