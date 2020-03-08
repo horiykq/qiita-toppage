@@ -8,8 +8,23 @@ class UserInfoInput extends React.Component {
         this.purpose = props.purpose
         this.style = {
             position: "relative",
+            display: "flex",
+            width: "430px",
+            height: "40px",
+            alignItems: "center",
+        }
+        this.labelstyle = {
+            position: "relative",
             display: "inline-block",
-            itemsAlign: "center",
+            color: "white",
+            fontSize: "12px",
+            width: "100px",
+            textAlign: "right",
+        }
+        this.boxstyle = {
+            position: "relative",
+            display: "inline-block",
+            alignItems: "center",
             width: "330px",
             height: "40px",
             borderRadius: "4px",
@@ -20,7 +35,6 @@ class UserInfoInput extends React.Component {
             display: "inline-block",
             width: "330px",
             height: "40px",
-            margin: "auto",
         }
         this.inputstyle = {
             position: "absolute",
@@ -42,20 +56,26 @@ class UserInfoInput extends React.Component {
         if (this.purpose === "user") {
             this.type = "text"
             this.init = "qiitan"
+            this.label = "ユーザ名"
         }
         else if (this.purpose === "address") {
             this.type = "text"
             this.init = "qiitan@qiita.com"
+            this.label = "メールアドレス"
         }
         else if (this.purpose === "password") {
             this.type = "password"
             this.init = "********"
+            this.label = "パスワード"
         }
         return(
             <div style={this.style}>
-                <form style={this.formstyle}>
-                    <input style={this.inputstyle} placeholder={this.init} type={this.type} />
-                </form>
+                <div style={this.labelstyle}>{this.label}　</div>
+                <div style={this.boxstyle}>
+                    <form style={this.formstyle}>
+                        <input style={this.inputstyle} placeholder={this.init} type={this.type} />
+                    </form>
+                </div>
             </div>
         )
     }

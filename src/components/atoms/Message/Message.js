@@ -5,7 +5,7 @@ class Message extends React.Component {
     constructor(props) {
         super(props)
         this.style = {
-            fontSize: "46px",
+            fontSize: "41px",
             color: "white",
             lineHeight: "60px",
         }

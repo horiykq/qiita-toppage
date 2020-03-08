@@ -9,9 +9,8 @@ class UserInfoInputs extends React.Component {
             position: "relative",
             display: "flex",
             flexDirection: "column",
-            alignItems: "center",
             marginLeft: "auto",
-            width: "330px",
+            width: "430px",
             height: "150px",
         }
         this.marginstyle = {

@@ -15,7 +15,7 @@ class LoginItems extends React.Component {
             flexDirection: "column",
             marginLeft: "auto",
             bottom: "230px",
-            width: "350px",
+            width: "430px",
             height: "396px",
         }
         this.orstyle = {

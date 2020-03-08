@@ -36,7 +36,7 @@ class LoginButton extends React.Component {
             this.buttonstyle = {
                 position: "relative",
                 display: "flex",
-                itemsAlign: "center",
+                alignItems: "center",
                 width: "96px",
                 height: "32px",
                 cursor: "pointer",
@@ -48,7 +48,7 @@ class LoginButton extends React.Component {
             this.buttonstyle = {
                 position: "relative",
                 display: "flex",
-                itemsAlign: "center",
+                alignItems: "center",
                 width: "96px",
                 height: "32px",
                 cursor: "pointer",

@@ -52,7 +52,7 @@ class RegistrationButton extends React.Component {
             this.buttonstyle = {
                 position: "relative",
                 display: "flex",
-                itemsAlign: "center",
+                alignItems: "center",
                 textAlign: "center",
                 width: this.width,
                 height: this.height,
@@ -68,7 +68,7 @@ class RegistrationButton extends React.Component {
             this.buttonstyle = {
                 position: "relative",
                 display: "flex",
-                itemsAlign: "center",
+                alignItems: "center",
                 textAlign: "center",
                 width: this.width,
                 height: this.height,
