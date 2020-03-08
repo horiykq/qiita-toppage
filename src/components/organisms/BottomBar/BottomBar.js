@@ -17,6 +17,7 @@ class BottomBar extends React.Component {
             position: "relative",
             marginLeft: "auto",
             top: "32px",
+            height: "203px",
         }
     }
 
