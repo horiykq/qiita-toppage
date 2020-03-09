@@ -1,5 +1,6 @@
 import React from 'react'
 import ContaintsButtons from '../../molecules/ContaintsButtons/ContaintsButtons'
+import Trends from '../../molecules/Trends/Trends'
 
 
 class Containts extends React.Component {
@@ -8,7 +9,7 @@ class Containts extends React.Component {
         super(props)
         this.style = {
             position: "relative",
-            display: "inline-block",
+            display: "flex",
             left: "0%",
             width: "782px",
             height: "2997px",
@@ -19,6 +20,7 @@ class Containts extends React.Component {
         return(
             <div style={this.style}>
                 <ContaintsButtons />
+                <Trends />
             </div>
         )
     }
