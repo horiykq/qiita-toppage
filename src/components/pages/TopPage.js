@@ -18,11 +18,11 @@ class TopPage extends React.Component {
     }
     this.contentstyle = {
       position: "absolute",
-      top: "532px",
-      height: "3029px",
+      top: "500px",
+      height: "3120px",
       left: "0%",
       width: "100%",
-      background: "yellow",
+      background: "#EFEFEF",
     }
     this.footerstyle = {
       position: "absolute",

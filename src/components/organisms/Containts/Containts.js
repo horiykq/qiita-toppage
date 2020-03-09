@@ -1,4 +1,6 @@
 import React from 'react'
+import ContaintsButtons from '../../molecules/ContaintsButtons/ContaintsButtons'
+
 
 class Containts extends React.Component {
 
@@ -9,14 +11,14 @@ class Containts extends React.Component {
             display: "inline-block",
             left: "0%",
             width: "782px",
-            height: "1564px",
-            background: "blue",
+            height: "2997px",
         }
     }
 
     render() {
         return(
             <div style={this.style}>
+                <ContaintsButtons />
             </div>
         )
     }

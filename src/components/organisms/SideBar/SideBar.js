@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 class SideBar extends React.Component {
 
     constructor(props) {
@@ -10,7 +11,6 @@ class SideBar extends React.Component {
             marginLeft: "auto",
             width: "300px",
             height: "3029px",
-            background: "blue",
         }
     }
 
