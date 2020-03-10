@@ -4,21 +4,26 @@ import React from 'react'
 function PullDownMenu() {
 
     const style = {
-        position: "relative",
+        position: "absolute",
+        flexDirection: "column",
+        top: "30px",
         width: "238px",
         height: "120px",
         background: "white",
         borderRadius: "3px",
         border: "1px solid #ADADAD",
+        fontSize: "16px",
+        color: "red",
+        fontWeight: "700",
     }
 
-    console.log("working!")
-
-    return(
-        <div style={style}>
-        </div>
-    )
-
+        return(
+            <div style={style}>
+                <div>　</div>
+                <div>プルダウンメニュー類の実装、</div>
+                <div>間に合いませんでした！！</div>
+            </div>
+        )
 }
 
 

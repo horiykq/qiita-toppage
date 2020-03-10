@@ -25,6 +25,7 @@ class TopContent extends React.Component {
             <div style={this.bodystyle}>
                 <Containts />
                 <SideBar />
+
             </div>
         )
     }

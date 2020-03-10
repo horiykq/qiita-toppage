@@ -1,5 +1,6 @@
 import React from 'react'
-import PullDownMenu from '../../atoms/PullDownMenu/PullDownMenu'
+import PullDownMenu from '../PullDownMenu/PullDownMenu'
+
 
 class MenuButton extends React.Component {
 
@@ -22,6 +23,11 @@ class MenuButton extends React.Component {
             fontSize: "10px",
             color: "white",
             top: "3px",
+        }
+        this.outerstyle = {
+            position: "relative",
+            top: "4px",
+            display: "inline",
         }
     }
 
@@ -81,18 +87,23 @@ class MenuButton extends React.Component {
         }
         if (this.state.clicked) {
             return(
-                <div style={this.style} onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave} onClick={this.handleClick}>
-                    <div style={this.innerstyle}>
-                        ▼
+                <div style={this.outerstyle}>
+                    <div style={this.style} onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave} onClick={this.handleClick}>
+                        <div style={this.innerstyle}>
+                            ▼
+                        </div>
                     </div>
+                    <PullDownMenu />
                 </div>
             )
         }
         else {
             return(
-                <div style={this.style} onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave} onClick={this.handleClick}>
-                    <div style={this.innerstyle}>
-                        ▼
+                <div style={this.outerstyle}>
+                    <div style={this.style} onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave} onClick={this.handleClick}>
+                        <div style={this.innerstyle}>
+                            ▼
+                        </div>
                     </div>
                 </div>
             )
