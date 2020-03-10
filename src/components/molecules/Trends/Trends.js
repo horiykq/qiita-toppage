@@ -1,6 +1,7 @@
 import React from 'react'
 import TrendBar from '../../atoms/TrendBar/TrendBar'
 import TrendTabButton from '../../atoms/TrendTabButton/TrendTabButton'
+import Article from '../../atoms/Article/Article'
 
 
 class Trends extends React.Component {
@@ -35,6 +36,7 @@ class Trends extends React.Component {
                     <TrendTabButton left="26px" label="週間" />
                     <TrendTabButton left="26px" label="月間" />
                 </div>
+                <Article data="" />
             </div>
         )
     }
