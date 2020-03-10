@@ -2,6 +2,7 @@ import React from 'react'
 import TrendBar from '../../atoms/TrendBar/TrendBar'
 import TrendTabButton from '../../atoms/TrendTabButton/TrendTabButton'
 import Article from '../../atoms/Article/Article'
+import todaytrends from '../../../contents/trends'
 
 
 class Trends extends React.Component {
@@ -14,7 +15,7 @@ class Trends extends React.Component {
             flexDirection: "column",
             left: "0%",
             width: "584px",
-            height: "2525px",
+            height: "2537px",
             background: "white",
         }
         this.tabsstyle = {
@@ -36,7 +37,9 @@ class Trends extends React.Component {
                     <TrendTabButton left="26px" label="週間" />
                     <TrendTabButton left="26px" label="月間" />
                 </div>
-                <Article data="" />
+                {todaytrends.map((trend) => (
+                    <Article title={trend.title} user={trend.user} new={trend.new} time={trend.time} />
+                ))}
             </div>
         )
     }

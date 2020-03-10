@@ -1,12 +1,15 @@
 import React from 'react'
 import usericon from '../../pages/images/account_icon.png'
+import LikeButton from '../LikeButton/LikeButton'
 
 
 class Article extends React.Component {
 
     constructor(props) {
         super(props)
-        this.data = props.data
+        this.title = props.title
+        this.user = props.user
+        this.time = props.time
         this.state = {
             titlehovered: false,
             userhovered: false,
@@ -52,12 +55,9 @@ class Article extends React.Component {
             display: "inline-block",
             width: "502px",
             height: "16px",
-            marginTop: "4px",
+            marginBottom: "8px",
             fontSize: "12px",
             color: "#999999",
-        }
-        this.likeiconstyle = {
-            cursor: "pointer",
         }
     }
 
@@ -130,12 +130,6 @@ class Article extends React.Component {
                 cursor: "pointer",
             }
         }
-        if (this.data === "") {
-            this.title = "Title"
-            this.user = "UserName"
-            this.time = "time ago"
-            this.count = 0
-        }
         return(
             <div style={this.style}>
                 <div style={this.usericonouterstyle}>
@@ -146,7 +140,7 @@ class Article extends React.Component {
                         {this.title}
                     </div>
                     <div style={this.infostyle}>
-                        　by <div style={this.userstyle} onMouseLeave={this.onMouseLeaveuser} onMouseEnter={this.onMouseEnteruser}>{this.user}</div>　{this.time}　<i class="fas fa-thumbs-up" style={this.likeiconstyle}></i> {this.count}
+                        　by <div style={this.userstyle} onMouseLeave={this.onMouseLeaveuser} onMouseEnter={this.onMouseEnteruser}>{this.user}</div>　{this.time}　<LikeButton count={this.count} />
                     </div>
                 </div>
             </div>
