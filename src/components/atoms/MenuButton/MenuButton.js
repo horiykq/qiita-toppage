@@ -1,4 +1,5 @@
 import React from 'react'
+import PullDownMenu from '../../atoms/PullDownMenu/PullDownMenu'
 
 class MenuButton extends React.Component {
 
@@ -6,9 +7,11 @@ class MenuButton extends React.Component {
         super(props, state)
         this.state = {
             hovered: false,
+            clicked: false,
         }
         this.onMouseLeave = this.onMouseLeave.bind(this)
         this.onMouseEnter = this.onMouseEnter.bind(this)
+        this.handleClick = this.handleClick.bind(this)
         this.innerstyle = {
             position: "absolute",
             right: "0px",
@@ -32,6 +35,19 @@ class MenuButton extends React.Component {
         this.setState({
             hovered: false,
         })
+    }
+
+    handleClick() {
+        if (this.state.clicked) {
+            this.setState({
+                clicked: false,
+            })
+        }
+        else {
+            this.setState({
+                clicked: true,
+            })
+        }
     }
 
     render() {
@@ -63,13 +79,24 @@ class MenuButton extends React.Component {
                 cursor: "pointer",
             }
         }
-        return(
-            <div style={this.style} onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave}>
-                <div style={this.innerstyle}>
-                    ▼
+        if (this.state.clicked) {
+            return(
+                <div style={this.style} onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave} onClick={this.handleClick}>
+                    <div style={this.innerstyle}>
+                        ▼
+                    </div>
                 </div>
-            </div>
-        )
+            )
+        }
+        else {
+            return(
+                <div style={this.style} onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave} onClick={this.handleClick}>
+                    <div style={this.innerstyle}>
+                        ▼
+                    </div>
+                </div>
+            )
+        }
     }
 }
 

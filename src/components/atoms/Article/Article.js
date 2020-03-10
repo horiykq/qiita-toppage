@@ -40,6 +40,7 @@ class Article extends React.Component {
             display: "inline-block",
             width: "40px",
             height: "40px",
+            cursor: "pointer",
         }
         this.infoouterstyle = {
             position: "relative",
