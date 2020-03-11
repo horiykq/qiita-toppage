@@ -1,4 +1,5 @@
 import React from 'react'
+import PullDownMenu from '../PullDownMenu/PullDownMenu'
 
 
 class CommunityButton extends React.Component {
@@ -7,9 +8,11 @@ class CommunityButton extends React.Component {
         super(props, state)
         this.state = {
             hovered: false,
+            clicked: false,
         }
         this.onMouseLeave = this.onMouseLeave.bind(this)
         this.onMouseEnter = this.onMouseEnter.bind(this)
+        this.onClick = this.onClick.bind(this)
         this.style = {
             position: "relative",
             display: "flex",
@@ -56,19 +59,49 @@ class CommunityButton extends React.Component {
         })
     }
 
+    onClick() {
+        if (this.state.clicked) {
+            this.setState({
+                clicked: false,
+            })
+        }
+        else {
+            this.setState({
+                clicked: true,
+            })
+        }
+    }
+
     render() {
-        return(
-            <div style={this.style} onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave}>
-                <div style={this.letterstyle}>
-                    コミュニティ
+        if (this.state.clicked) {
+            return(
+                <div style={this.style} onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave} onClick={this.onClick}>
+                    <div style={this.letterstyle}>
+                        コミュニティ
+                    </div>
+                    {this.state.hovered ?
+                        <div style={this.hoveredstyle}>▼</div>
+                    :
+                        <div style={this.unhoveredstyle}>▼</div>
+                    }
+                    <PullDownMenu purpose="community" width="200px" height="352px" />
                 </div>
-                {this.state.hovered ?
-                    <div style={this.hoveredstyle}>▼</div>
-                :
-                    <div style={this.unhoveredstyle}>▼</div>
-                }
-            </div>
-        )
+            )
+        }
+        else {
+            return(
+                <div style={this.style} onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave} onClick={this.onClick}>
+                    <div style={this.letterstyle}>
+                        コミュニティ
+                    </div>
+                    {this.state.hovered ?
+                        <div style={this.hoveredstyle}>▼</div>
+                    :
+                        <div style={this.unhoveredstyle}>▼</div>
+                    }
+                </div>
+            )
+        }
     }
 }
 

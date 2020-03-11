@@ -1,29 +1,59 @@
 import React from 'react'
+import PullDownButton from '../PullDownButton/PullDownButton'
 
 
-function PullDownMenu() {
+class PullDownMenu extends React.Component {
 
-    const style = {
-        position: "absolute",
-        flexDirection: "column",
-        top: "30px",
-        width: "238px",
-        height: "120px",
-        background: "white",
-        borderRadius: "3px",
-        border: "1px solid #ADADAD",
-        fontSize: "16px",
-        color: "red",
-        fontWeight: "700",
+    constructor(props) {
+        super(props)
+        this.width = props.width
+        this.height = props.height
+        this.purpose = props.purpose
+        this.style = {
+            position: "absolute",
+            display: "flex",
+            flexDirection: "column",
+            top: "40px",
+            width: this.width,
+            height: this.height,
+            background: "white",
+            borderRadius: "3px",
+            border: "1px solid #ADADAD",
+        }
+        this.logininfostyle = {
+            position: "relative",
+            display: "inline-block",
+            borderTop: "1px solid #DDDDDD",
+            fontSize: "12px",
+            color: "#AAAAAA",
+            fontWeight: "500",
+            paddingTop: "7px",
+        }
     }
 
-        return(
-            <div style={style}>
-                <div>　</div>
-                <div>プルダウンメニュー類の実装、</div>
-                <div>間に合いませんでした！！</div>
-            </div>
-        )
+    render() {
+        if (this.purpose === "community") {
+            return(
+                <div style={this.style}>
+                    <PullDownButton width={this.width} label="ユーザー一覧" />
+                    <PullDownButton width={this.width} label="Organization一覧" />
+                    <PullDownButton width={this.width} label="アドベントカレンダー" />
+                </div>
+            )
+        }
+        else if (this.purpose === "logo") {
+            return(
+                <div style={this.style}>
+                    <PullDownButton width={this.width} label="Qiita" />
+                    <div style={this.logininfostyle}>
+                        　　ログイン中のチームがありません
+                    </div>
+                    <PullDownButton width={this.width} label="Qiita Team にログイン…" />
+                </div>
+            )
+        }
+    }
+
 }
 
 
